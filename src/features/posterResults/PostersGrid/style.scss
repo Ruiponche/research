@@ -1,0 +1,64 @@
+.posters-grid {
+  width: 100%;
+  .poster{
+    background-color: black;
+    position: relative;
+    height: 340px;
+    width: 100%;
+    img {
+      object-fit: cover;
+      object-position: 100% 0;
+    }
+    .description {
+      text-align: center;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-color: black;
+      color: white;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .posters-grid {
+    display: flex;
+    flex-direction: column;
+    .poster {
+  
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .posters-grid {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    .poster {
+  
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .posters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .poster {
+  
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .posters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .poster {
+  
+    }
+  }
+}
