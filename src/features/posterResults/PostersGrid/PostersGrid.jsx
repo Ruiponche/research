@@ -23,7 +23,7 @@ const PostersGrid = ({ posters, events }) => {
   return <div className='posters-grid'>
     {posters.map(poster => {
       const event = events[poster.event].name
-      return < PosterCard poster={poster} event={event} />
+      return <PosterCard poster={poster} event={event} key={poster.id} />
     })}
   </div>
 }
