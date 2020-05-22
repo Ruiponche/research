@@ -14,7 +14,7 @@ const PosterCard = ({ poster: { title, thumb_url, author_names, keywords, id }, 
         <span className='title'>{title}</span>
         <span className='event'>{` ${event}`}</span>
       </p>
-      {keywords.map(keyword => <span className='tag'>{keyword}</span>)}
+      <div className='keywords'>{keywords.map(keyword => <span className='tag'>{keyword}</span>)}</div>
     </div>
   </div>)
 }

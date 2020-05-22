@@ -37,6 +37,11 @@
         font-size: 0.9rem;
       }
 
+      .keywords {
+        max-height: 6rem;
+        overflow-y: auto;
+      }
+
       .tag {
         display: inline-block;
         height: 1.6rem;
