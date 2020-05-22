@@ -1,6 +1,6 @@
 import React from 'react';
 import RouterApp from './core/RouterApp/RouterApp'
-import './App.css';
+import './main.scss';
 
 function App() {
   return (

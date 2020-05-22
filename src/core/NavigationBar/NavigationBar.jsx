@@ -9,11 +9,21 @@ import './style.scss'
 export default function NavigationBar() {
   let location = useLocation();
   const isRoot = location.pathname === '/'
+  const isSearch = location.pathname === '/search'
   return (
-    <nav class="topnav">
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      {!isRoot && <SearchBar />}
+    <nav className="topnav">
+      {!isRoot &&
+        <Link to={{
+          pathname: '/',
+          search: location.search
+        }} >
+          <h1>
+            <span className='title-1'>Re</span>
+            <span className='title-2'>search</span>
+          </h1>
+        </Link>
+      }
+      {!isRoot && <SearchBar autosearch={isSearch} />}
     </nav>
   )
 }

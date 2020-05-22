@@ -25,14 +25,15 @@ function getPosterApi({ id }) {
 
 function* searchPosters(action) {
   try {
-    const { query, offset, limit } = action
+    const { query, offset, limit, page } = action
     const { data } = yield call(searchPosterApi, { query, offset, limit });
     const events = data.events.reduce(
       (obj, item) => Object.assign(obj, { [item.id]: item }), {});
     const posters = data.posters.reduce(
       (obj, item) => Object.assign(obj, { [item.id]: item }), {});
+    const pages = Math.ceil(data.collection.total / 32)
     yield put({ type: ADD_EVENTS, entities: events })
-    yield put({ type: SEARCH_POSTERS_SUCCESS, entities: posters })
+    yield put({ type: SEARCH_POSTERS_SUCCESS, entities: posters, searchTerm: query, page, pages })
   } catch (error) {
     //
   }
@@ -42,7 +43,7 @@ function* getPoster(action) {
   try {
     const { id } = action
     const { data } = yield call(getPosterApi, { id });
-    yield put({ type: GET_POSTER_SUCCESS, data })
+    yield put({ type: GET_POSTER_SUCCESS, id, poster: data.poster })
   } catch (error) {
     //
   }
