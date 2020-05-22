@@ -13,8 +13,6 @@ export default function RouterApp() {
   return (
     <Router>
       <NavigationBar />
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/posters/:id">
           <PosterPage />

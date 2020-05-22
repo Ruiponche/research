@@ -12,7 +12,9 @@ const PosterDetail = ({ poster }) => {
     {poster.paper_abstract && <div className='abstract'>
       {abstractOpen
         ? <Fragment>
-          <button onClick={() => setAbstractOpen(false)}>Hide Abstract</button><br /><p>{poster.paper_abstract}</p>
+          <button onClick={() => setAbstractOpen(false)}>Hide Abstract</button>
+          <br />
+          <p>{poster.paper_abstract}</p>
         </Fragment>
         : <button onClick={() => setAbstractOpen(true)}>See Abstract</button>
       }
