@@ -36,6 +36,7 @@ const SearchBar = ({ searchPostersRequest, autosearch, pagesLoaded }) => {
     <div className='search-bar'>
       <form onSubmit={formik.handleSubmit}>
         <input
+          required
           id="searchTerm"
           name="searchTerm"
           type="text"
